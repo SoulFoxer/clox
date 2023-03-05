@@ -2,6 +2,7 @@
 
 #include "../header/debug.h"
 #include "../header/value.h"
+#include "../header/vm.h"
 
 void disassembleChunk(Chunk *chunk, const char *name) {
     printf("== %s ==\n", name);
@@ -49,6 +50,7 @@ int disassembleInstruction(Chunk *chunk, int offset) {
             return simpleInstruction("OP_DIVIDE", offset);
         case OP_NEGATE:
             return simpleInstruction("OP_NEGATE", offset);
+            break;
         case OP_RETURN:
             return simpleInstruction("OP_RETURN", offset);
         default:
